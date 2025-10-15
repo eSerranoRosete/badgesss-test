@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from "motion/react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useMobileTilt } from "./useMobileTilt";
 export default function App() {
   const ref = useRef<HTMLDivElement | null>(null);
