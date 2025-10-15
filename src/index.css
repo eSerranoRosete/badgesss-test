@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(14.1% 0.005 285.823);
+  --color-foreground: oklch(98.5% 0 0);
+  --font-sans: "Geist Variable", sans-serif;
+  --font-mono: "Geist Mono Variable", monospace;
+}
+
+body {
+  font-family: "Geist Variable", sans-serif;
+}
