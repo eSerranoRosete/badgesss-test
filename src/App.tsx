@@ -54,8 +54,8 @@ export default function App() {
         className="md:w-md text-foreground flex flex-col w-full p-4 bg-black shadow-2xl shadow-black border-[0.1px] border-zinc-900 h-2/3 rounded-2xl relative"
       >
         <p className="absolute flex items-center justify-between text-xs w-full top-0 left-0 p-4 font-mono text-zinc-600">
+          <span></span>
           <span>get yours now</span>
-          <span>badgesss.com</span>
         </p>
         <div className="w-20 bg-rose-800 shadow-2xl shadow-black h-1/2 absolute left-1/2 -translate-x-1/2 top-10 -translate-y-full">
           <span className="absolute whitespace-nowrap font-semibold opacity-50 -left-12 -rotate-90 bottom-26 text-zinc-950 text-3xl">
