@@ -53,11 +53,15 @@ export default function App() {
         transition={{ type: "spring", stiffness: 150, damping: 15 }}
         className="md:w-md flex flex-col w-full p-4 bg-black shadow-2xl shadow-black border-[0.1px] border-zinc-900 h-2/3 rounded-2xl relative"
       >
-        <p className="absolute flex items-center justify-between text-sm w-full top-0 left-0 p-4 font-mono text-zinc-600">
+        <p className="absolute flex items-center justify-between text-xs w-full top-0 left-0 p-4 font-mono text-zinc-600">
           <span>badgesss.com</span>
           <span>get yours now</span>
         </p>
-        <div className="w-20 bg-zinc-900 shadow-2xl shadow-black h-1/2 absolute left-1/2 -translate-x-1/2 top-10 -translate-y-full"></div>
+        <div className="w-20 bg-zinc-900 shadow-2xl shadow-black h-1/2 absolute left-1/2 -translate-x-1/2 top-10 -translate-y-full">
+          <span className="absolute whitespace-nowrap font-medium -left-12 -rotate-90 bottom-26 text-zinc-950 text-3xl">
+            SOLID WORK
+          </span>
+        </div>
         {/* <svg
           width="inherit"
           height="inherit"
@@ -83,9 +87,9 @@ export default function App() {
         <p className="text-3xl leading-8 font-medium text-balance mt-[80%]">
           Eduardo
           <br />
-          Serrano Rosete
+          Serrano
         </p>
-        <p className="font-mono text-sm mt-2">Virtual Attendee</p>
+        <p className="font-mono text-zinc-400 text-sm mt-2">Virtual Attendee</p>
         <p className="text-xs text-zinc-600 font-mono mt-auto">
           badgess.com/get-yours
         </p>
