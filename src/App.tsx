@@ -51,18 +51,18 @@ export default function App() {
           willChange: "transform",
         }}
         transition={{ type: "spring", stiffness: 150, damping: 15 }}
-        className="md:w-md flex flex-col w-full p-4 bg-black shadow-2xl shadow-black border-[0.1px] border-zinc-900 h-2/3 rounded-2xl relative"
+        className="md:w-md text-foreground flex flex-col w-full p-4 bg-black shadow-2xl shadow-black border-[0.1px] border-zinc-900 h-2/3 rounded-2xl relative"
       >
         <p className="absolute flex items-center justify-between text-xs w-full top-0 left-0 p-4 font-mono text-zinc-600">
+          <span></span>
           <span>badgesss.com</span>
-          <span>get yours now</span>
         </p>
-        <div className="w-20 bg-zinc-900 shadow-2xl shadow-black h-1/2 absolute left-1/2 -translate-x-1/2 top-10 -translate-y-full">
-          <span className="absolute whitespace-nowrap font-medium -left-12 -rotate-90 bottom-26 text-zinc-950 text-3xl">
+        <div className="w-20 bg-rose-800 shadow-2xl shadow-black h-1/2 absolute left-1/2 -translate-x-1/2 top-10 -translate-y-full">
+          <span className="absolute whitespace-nowrap font-semibold opacity-50 -left-12 -rotate-90 bottom-26 text-zinc-950 text-3xl">
             SOLID WORK
           </span>
         </div>
-        {/* <svg
+        <svg
           width="inherit"
           height="inherit"
           viewBox="0 0 24 24"
@@ -82,15 +82,15 @@ export default function App() {
             d="M0 19.2008C0 18.7577 0.352686 18.3984 0.787746 18.3984H23.2123C23.6473 18.3984 24 18.7577 24 19.2008V22.5976C24 23.0408 23.6473 23.4 23.2123 23.4H0.787746C0.352685 23.4 0 23.0408 0 22.5976V19.2008Z"
             fill="currentColor"
           ></path>
-        </svg> */}
-        <div className="w-28 bg-background rounded-full h-6 border-[0.1px] border-zinc-900 absolute top-5 left-1/2 -translate-x-1/2"></div>
-        <p className="text-3xl leading-8 font-medium text-balance mt-[80%]">
+        </svg>
+        <div className="w-28 bg-white rounded-full h-6 border-[0.1px] border-zinc-900 absolute top-5 left-1/2 -translate-x-1/2"></div>
+        <p className="text-3xl mt-auto leading-8 font-medium text-balance">
           Eduardo
           <br />
           Serrano
         </p>
         <p className="font-mono text-zinc-400 text-sm mt-2">Virtual Attendee</p>
-        <p className="text-xs text-zinc-600 font-mono mt-auto">
+        <p className="text-xs text-zinc-600 font-mono mt-12">
           badgess.com/get-yours
         </p>
         <div className="w-40 rounded-md overflow-hidden absolute bottom-4 right-4">
