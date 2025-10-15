@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
+import { useMobileTilt } from "./useMobileTilt";
 export default function App() {
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -30,19 +31,11 @@ export default function App() {
     y.set(0);
   };
 
-  useEffect(() => {
-    const handleOrientation = (e: DeviceOrientationEvent) => {
-      const { beta, gamma } = e; // beta = front-back, gamma = left-right
-      x.set((gamma || 0) / 45); // normalize values
-      y.set((beta || 0) / 45);
-    };
-    window.addEventListener("deviceorientation", handleOrientation);
-    return () =>
-      window.removeEventListener("deviceorientation", handleOrientation);
-  }, []);
+  const { enableTilt } = useMobileTilt(x, y);
 
   return (
     <div
+      onClick={enableTilt}
       ref={ref}
       style={{ perspective: 1000 }}
       className="w-full h-screen p-4 flex items-center justify-center"
