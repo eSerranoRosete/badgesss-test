@@ -1,22 +1,21 @@
 // @ts-nocheck
-
 import { useEffect, useState } from "react";
 
 export const useMobileTilt = (x: any, y: any) => {
   const [permissionGranted, setPermissionGranted] = useState(false);
 
   const enableTilt = async () => {
-    // Only iOS Safari needs this
     if (
       typeof DeviceOrientationEvent !== "undefined" &&
       typeof DeviceOrientationEvent.requestPermission === "function"
     ) {
-      const response = await DeviceOrientationEvent.requestPermission();
-      if (response === "granted") {
-        setPermissionGranted(true);
+      try {
+        const response = await DeviceOrientationEvent.requestPermission();
+        if (response === "granted") setPermissionGranted(true);
+      } catch (err) {
+        console.error("Device orientation permission denied:", err);
       }
     } else {
-      // Android / others
       setPermissionGranted(true);
     }
   };
@@ -26,13 +25,18 @@ export const useMobileTilt = (x: any, y: any) => {
 
     const handleOrientation = (event: DeviceOrientationEvent) => {
       const { beta = 0, gamma = 0 } = event;
-      x.set(gamma / 45); // left-right tilt
-      y.set(beta / 45); // front-back tilt
+
+      // Flip/invert direction to make it feel more natural on mobile
+      const tiltX = -(gamma / 45); // ← inverts left-right
+      const tiltY = beta / 45; // normal front-back (flip if needed)
+
+      x.set(tiltX);
+      y.set(tiltY);
     };
 
-    window.addEventListener("deviceorientation", handleOrientation);
+    window.addEventListener("deviceorientation", handleOrientation, true);
     return () =>
-      window.removeEventListener("deviceorientation", handleOrientation);
+      window.removeEventListener("deviceorientation", handleOrientation, true);
   }, [permissionGranted, x, y]);
 
   return { enableTilt };
