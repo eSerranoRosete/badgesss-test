@@ -43,6 +43,8 @@ export default function App() {
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
+        initial={{ y: "-100%" }}
+        animate={{ y: 0 }}
         style={{
           rotateX,
           rotateY,
